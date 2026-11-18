@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GTA 5 Price Tags</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">G</div><div><strong>PRICE TAGS</strong><span>GTA ONLINE DATABASE</span></div></div>
+      <div class="nav-label">WORKSPACE</div>
+      <a class="nav-item active" href="#"><span>▦</span> Overview</a>
+      <a class="nav-item" href="#catalogue"><span>⌕</span> Price catalogue</a>
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div><span>Catalogue workspace</span>
+        <small>Community reference tool</small>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><span class="eyebrow">LOS SANTOS ECONOMY</span><h1>Price dashboard</h1></div>
+        <div class="top-actions"><span class="live-pill"><i></i> LOCAL DATABASE</span><div class="avatar">PT</div></div>
+      </header>
+
+      <section class="welcome">
+        <div><p class="eyebrow">DATABASE OVERVIEW</p><h2>Know the price before<br><em>you make the move.</em></h2>
+        <p class="welcome-copy">Browse vehicles, properties, and upgrades in one organized catalogue.</p></div>
+        <div class="welcome-art"><div class="ring ring-one"></div><div class="ring ring-two"></div><div class="art-label">LS / 05</div><div class="art-car">◆</div></div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card"><span class="stat-icon">▤</span><p>CATALOGUE ITEMS</p><strong id="stat-total">—</strong><small>Entries in this database</small></article>
+        <article class="stat-card"><span class="stat-icon">◈</span><p>VEHICLES</p><strong id="stat-vehicles">—</strong><small>Cars and transport</small></article>
+        <article class="stat-card"><span class="stat-icon">⌂</span><p>PROPERTIES</p><strong id="stat-properties">—</strong><small>Homes and businesses</small></article>
+        <article class="stat-card"><span class="stat-icon">⚙</span><p>UPGRADES</p><strong id="stat-upgrades">—</strong><small>Modifications and extras</small></article>
+      </section>
+
+      <section class="catalogue-section" id="catalogue">
+        <div class="section-heading"><div><p class="eyebrow">EXPLORE DATABASE</p><h2>Price catalogue</h2></div><span class="result-count" id="result-count">Loading...</span></div>
+        <div class="filter-panel">
+          <label class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Search items, categories..."></label>
+          <select id="category"><option>All</option><option>Vehicles</option><option>Properties</option><option>Upgrades</option></select>
+          <input id="min-price" type="number" min="0" placeholder="Min GTA$">
+          <input id="max-price" type="number" min="0" placeholder="Max GTA$">
+          <select id="sort"><option value="name">Name: A–Z</option><option value="price-low">Price: Low to high</option><option value="price-high">Price: High to low</option></select>
+          <button id="clear-filters" class="clear-btn">Clear</button>
+        </div>
+        <div class="items-grid" id="items-grid"><div class="loading">Loading catalogue...</div></div>
+        <p class="data-note">Prices are reference values, not live game data. Check the notes and source links; verify current in-game prices before purchasing.</p>
+      </section>
+      <footer>GTA 5 PRICE TAGS <span>Independent fan-made reference project · Not affiliated with Rockstar Games</span></footer>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
