@@ -1,1 +1,9 @@
+from flask import Flask
 
+def create_app():
+    app = Flask(__name__)
+    app.config["SECRET_KEY"] = "change-this-for-production"
+
+    from .routes import main
+    app.register_blueprint(main)
+    return app
